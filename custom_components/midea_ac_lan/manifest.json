@@ -7,10 +7,10 @@
   ],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/ae1335/ha-midea-meiju#readme",
+  "documentation": "https://github.com/ae1335/ha-meide-ac#readme",
   "integration_type": "device",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/ae1335/ha-midea-meiju/issues",
+  "issue_tracker": "https://github.com/ae1335/ha-meide-ac/issues",
   "loggers": [
     "midealan"
   ],

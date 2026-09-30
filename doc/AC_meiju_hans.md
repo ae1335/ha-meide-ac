@@ -88,7 +88,7 @@
 ## 六、安装（HACS 自定义仓库）
 
 1. HACS → 右上角菜单 → 自定义存储库
-2. 仓库地址 `https://github.com/ae1335/ha-midea-meiju`，类别"集成"
+2. 仓库地址 `https://github.com/ae1335/ha-meide-ac`，类别"集成"
 3. 安装后重启 Home Assistant
 
 ## 七、限制说明
