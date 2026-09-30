@@ -632,6 +632,7 @@
       "wind_lr_angle": {
         "name": "Airflow Horizontal",
         "state": {
+          "swing": "Swing Horizontal",
           "off": "Off",
           "left": "Left",
           "left_mid": "Left-Mid",
@@ -643,6 +644,7 @@
       "wind_ud_angle": {
         "name": "Airflow Vertical",
         "state": {
+          "swing": "Swing Vertical",
           "off": "Off",
           "up": "Up",
           "up_mid": "Up-Mid",

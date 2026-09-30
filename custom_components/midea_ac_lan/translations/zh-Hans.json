@@ -543,7 +543,7 @@
         "name": "水温档位"
       },
       "fan_speed_percent": {
-        "name": "风速百分比"
+        "name": "设定风速"
       },
       "vacation_days": {
         "name": "假期天数"
@@ -674,25 +674,27 @@
         "name": "水位设定"
       },
       "wind_lr_angle": {
-        "name": "水平出风",
+        "name": "左右风",
         "state": {
-          "off": "停止",
-          "left": "左方",
-          "left_mid": "左中",
-          "middle": "中部",
-          "right_mid": "右中",
-          "right": "右方"
+          "swing": "左右摆风",
+          "off": "停止摆风",
+          "left": "最左",
+          "left_mid": "偏左",
+          "middle": "居中",
+          "right_mid": "偏右",
+          "right": "最右"
         }
       },
       "wind_ud_angle": {
-        "name": "垂直出风",
+        "name": "上下风",
         "state": {
-          "off": "停止",
-          "up": "上方",
-          "up_mid": "中上",
-          "middle": "中部",
-          "down_mid": "中下",
-          "down": "下方"
+          "swing": "上下摆风",
+          "off": "停止摆风",
+          "up": "最上",
+          "up_mid": "偏上",
+          "middle": "居中",
+          "down_mid": "偏下",
+          "down": "最下"
         }
       }
     },
@@ -909,7 +911,7 @@
         }
       },
       "error_code": {
-        "name": "错误码"
+        "name": "故障码"
       },
       "humidify_feedback": {
         "name": "湿度反馈"
@@ -1615,7 +1617,7 @@
         "name": "CL 杀菌"
       },
       "comfort_mode": {
-        "name": "舒省模式"
+        "name": "智控温"
       },
       "degerming": {
         "name": "除菌"
@@ -1642,7 +1644,7 @@
         "name": "点动零冷水"
       },
       "eco_mode": {
-        "name": "ECO模式"
+        "name": "酷省电（ECO）"
       },
       "memory": {
         "name": "记忆"

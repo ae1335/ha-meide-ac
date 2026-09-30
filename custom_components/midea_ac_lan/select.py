@@ -16,6 +16,11 @@ from .midea_entity import MideaEntity
 if TYPE_CHECKING:
     from midealan.devices.e1 import MideaE1Device
 
+# Synthetic select option for angle selects that also support continuous
+# oscillation (Midea Meiju "上下摆风" / "左右摆风"). Selecting it turns on the
+# configured swing attribute; selecting any angle turns the swing back off.
+_SWING_OPTION = "swing"
+
 
 async def async_setup_entry(
     hass: HomeAssistant,
@@ -57,10 +62,18 @@ class MideaSelect(MideaEntity, SelectEntity):
         self._attribute_key = self._config.get("attribute", entity_key)
         self._options_name = self._config.get("options")
         self._options_dict_name = self._config.get("options_dict")
+        self._swing_attribute = self._config.get("swing_attribute")
 
     @property
     def options(self) -> list[str]:
         """Available options for the entity."""
+        base = self._base_options()
+        if self._swing_attribute is not None:
+            return [_SWING_OPTION, *base]
+        return base
+
+    def _base_options(self) -> list[str]:
+        """Base option list without the synthetic swing entry."""
         if self._options_dict_name:
             options = self._get_options_dict()
             codes_by_model = self._config.get("options_codes_by_model", {})
@@ -77,6 +90,11 @@ class MideaSelect(MideaEntity, SelectEntity):
     @property
     def current_option(self) -> str | None:
         """Currently selected option."""
+        if (
+            self._swing_attribute is not None
+            and self._device.get_attribute(self._swing_attribute)
+        ):
+            return _SWING_OPTION
         value = self._device.get_attribute(self._attribute_key)
         if value is None:
             return None
@@ -98,6 +116,14 @@ class MideaSelect(MideaEntity, SelectEntity):
         if self._config.get("set_message") == "e1_work_mode":
             self._select_e1_work_mode(option)
             return
+        if self._swing_attribute is not None:
+            if option == _SWING_OPTION:
+                self._device.set_attribute(self._swing_attribute, True)
+                return
+            if self._device.get_attribute(self._swing_attribute):
+                # Switching to a fixed angle stops continuous oscillation
+                # first, mirroring the Midea Meiju behaviour.
+                self._device.set_attribute(self._swing_attribute, False)
         value: Any = option
         if self._config.get("option_type") == "int":
             value = int(option)

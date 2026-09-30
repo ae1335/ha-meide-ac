@@ -476,6 +476,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "translation_key": "aux_heating",
                 "name": "Aux Heating",
                 "icon": "mdi:heat-wave",
+                "default": True,
             },
             ACAttributes.boost_mode: {
                 "type": Platform.SWITCH,
@@ -494,6 +495,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "translation_key": "comfort_mode",
                 "name": "Comfort Mode",
                 "icon": "mdi:alpha-c-circle",
+                "default": True,
             },
             ACAttributes.dry: {
                 "type": Platform.SWITCH,
@@ -506,6 +508,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "translation_key": "eco_mode",
                 "name": "ECO Mode",
                 "icon": "mdi:leaf-circle",
+                "default": True,
             },
             ACAttributes.frost_protect: {
                 "type": Platform.SWITCH,
@@ -518,6 +521,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "translation_key": "indirect_wind",
                 "name": "Indirect Wind",
                 "icon": "mdi:tailwind",
+                "default": True,
             },
             ACAttributes.natural_wind: {
                 "type": Platform.SWITCH,
@@ -631,6 +635,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": SensorDeviceClass.TEMPERATURE,
                 "unit": UnitOfTemperature.CELSIUS,
                 "state_class": SensorStateClass.MEASUREMENT,
+                "default": True,
             },
             ACAttributes.outdoor_temperature: {
                 "type": Platform.SENSOR,
@@ -676,6 +681,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "translation_key": "error_code",
                 "name": "Error Code",
                 "icon": "mdi:alert-box",
+                "default": True,
             },
             # group 1: compressor and refrigerant circuit
             ACAttributes.compressor_frequency: {
@@ -802,6 +808,8 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "name": "Airflow Horizontal",
                 "options": "wind_lr_angles",
                 "icon": "mdi:pan-horizontal",
+                "swing_attribute": ACAttributes.swing_horizontal,
+                "default": True,
             },
             ACAttributes.wind_ud_angle: {
                 "type": Platform.SELECT,
@@ -809,6 +817,8 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "name": "Airflow Vertical",
                 "options": "wind_ud_angles",
                 "icon": "mdi:pan-vertical",
+                "swing_attribute": ACAttributes.swing_vertical,
+                "default": True,
             },
             ACAttributes.rate_select: {
                 "type": Platform.SELECT,
@@ -825,6 +835,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "max": 100,
                 "min": 1,
                 "step": 1,
+                "default": True,
             },
         },
     },
