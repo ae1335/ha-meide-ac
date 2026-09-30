@@ -73,7 +73,13 @@ class MideaSelect(MideaEntity, SelectEntity):
         return base
 
     def _base_options(self) -> list[str]:
-        """Base option list without the synthetic swing entry."""
+        """Return the base option list without the synthetic swing entry.
+
+        Returns
+        -------
+        The base option labels, before prepending the swing option.
+
+        """
         if self._options_dict_name:
             options = self._get_options_dict()
             codes_by_model = self._config.get("options_codes_by_model", {})
@@ -90,9 +96,8 @@ class MideaSelect(MideaEntity, SelectEntity):
     @property
     def current_option(self) -> str | None:
         """Currently selected option."""
-        if (
-            self._swing_attribute is not None
-            and self._device.get_attribute(self._swing_attribute)
+        if self._swing_attribute is not None and self._device.get_attribute(
+            self._swing_attribute,
         ):
             return _SWING_OPTION
         value = self._device.get_attribute(self._attribute_key)

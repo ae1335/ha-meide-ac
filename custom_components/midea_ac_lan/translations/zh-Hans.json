@@ -1179,62 +1179,62 @@
         "name": "室外温度"
       },
       "comp_run_freq": {
-        "name": "Compressor Frequency"
+        "name": "压缩机频率"
       },
       "outdoor_fan_speed": {
-        "name": "Outdoor Fan Speed"
+        "name": "室外风机转速"
       },
       "unit_mode_run": {
-        "name": "Unit Run Mode",
+        "name": "机组运行模式",
         "state": {
-          "off": "Off",
-          "auto": "Auto",
-          "cool": "Cool",
-          "heat": "Heat",
-          "dhw": "DHW"
+          "off": "关机",
+          "auto": "自动",
+          "cool": "制冷",
+          "heat": "制热",
+          "dhw": "生活热水"
         }
       },
       "odu_target_fre": {
-        "name": "Target Compressor Frequency"
+        "name": "目标压缩机频率"
       },
       "odu_voltage": {
-        "name": "Outdoor Unit Voltage"
+        "name": "室外机电压"
       },
       "odu_comp_current": {
-        "name": "Compressor Current"
+        "name": "压缩机电流"
       },
       "exv_current": {
-        "name": "Electronic Expansion Valve Opening"
+        "name": "电子膨胀阀开度"
       },
       "fg_capacity_need": {
-        "name": "Capacity Demand"
+        "name": "容量需求"
       },
       "pressure_high": {
-        "name": "Refrigerant Pressure (High Side)"
+        "name": "制冷剂压力（高压侧）"
       },
       "pressure_low": {
-        "name": "Refrigerant Pressure (Low Side)"
+        "name": "制冷剂压力（低压侧）"
       },
       "temp_t1": {
-        "name": "Temperature Sensor T1"
+        "name": "温度传感器 T1"
       },
       "temp_t2": {
-        "name": "Plate Heat Exchanger Temperature (T2)"
+        "name": "板式换热器温度（T2）"
       },
       "temp_t2b": {
-        "name": "Plate Heat Exchanger Outlet Temperature (T2B)"
+        "name": "板式换热器出水温度（T2B）"
       },
       "temp_t3": {
-        "name": "Outdoor Coil Temperature (T3)"
+        "name": "室外盘管温度（T3）"
       },
       "temp_tp": {
-        "name": "Discharge Pipe Temperature (TP)"
+        "name": "排气温度（TP）"
       },
       "temp_th": {
-        "name": "Suction Temperature (TH)"
+        "name": "吸气温度（TH）"
       },
       "temp_tf": {
-        "name": "Power Module Temperature (TF)"
+        "name": "功率模块温度（TF）"
       },
       "program": {
         "name": "程序"
@@ -2092,7 +2092,7 @@
         "name": "iECO 节能"
       },
       "sound": {
-        "name": "Sound"
+        "name": "提示音"
       },
       "tbh": {
         "name": "TBH"
