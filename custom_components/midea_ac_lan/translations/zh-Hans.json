@@ -488,6 +488,78 @@
       },
       "time_set": {
         "name": "功能 - 时间已设置"
+      },
+      "current_radar": {
+        "name": "人体存在"
+      },
+      "presets_function": {
+        "name": "预设功能"
+      },
+      "fall_asleep_status": {
+        "name": "入睡状态"
+      },
+      "portable_sense": {
+        "name": "便携感应"
+      },
+      "night_mode": {
+        "name": "夜间模式"
+      },
+      "screen_status": {
+        "name": "屏幕状态"
+      },
+      "led_status": {
+        "name": "氛围灯状态"
+      },
+      "arofene_link": {
+        "name": "甲醛模块状态"
+      },
+      "header_exist": {
+        "name": "顶盖状态"
+      },
+      "radar_exist": {
+        "name": "雷达状态"
+      },
+      "header_led_status": {
+        "name": "呼吸灯"
+      },
+      "child_lock": {
+        "name": "童锁"
+      },
+      "have_reserve_task": {
+        "name": "预约任务"
+      },
+      "uv_switch": {
+        "name": "UV 紫外灯"
+      },
+      "wifi_switch": {
+        "name": "Wi-Fi 指示灯"
+      },
+      "voice_switch": {
+        "name": "语音提示"
+      },
+      "command_source": {
+        "name": "指令来源"
+      },
+      "device_error": {
+        "name": "设备故障"
+      },
+      "carpet_switch": {
+        "name": "地毯检测"
+      },
+      "board_communication_error": {
+        "name": "电路板通信故障"
+      },
+      "laser_sensor_shelter": {
+        "name": "激光传感器遮挡"
+      },
+      "laser_sensor_error": {
+        "name": "激光传感器故障"
+      },
+      "disturb_switch": {
+        "name": "勿扰模式"
+      },
+      "light_status": {
+        "name": "灯光状态"
       }
     },
     "button": {
@@ -571,6 +643,9 @@
       },
       "keep_warm_time": {
         "name": "保温时间"
+      },
+      "voice_volume": {
+        "name": "语音音量"
       }
     },
     "select": {
@@ -696,6 +771,94 @@
           "down_mid": "偏下",
           "down": "最下"
         }
+      },
+      "clean_mode": {
+        "name": "清扫模式",
+        "state": {
+          "none": "无",
+          "random": "随机",
+          "arc": "弧形",
+          "edge": "沿边",
+          "emphases": "重点",
+          "screw": "螺旋",
+          "bed": "床底",
+          "wide_screw": "宽螺旋",
+          "auto": "自动",
+          "area": "区域",
+          "zone_index": "分区标记",
+          "zone_rect": "划区",
+          "path": "路径"
+        }
+      },
+      "fan_level": {
+        "name": "风量",
+        "state": {
+          "off": "关闭",
+          "soft": "轻柔",
+          "normal": "标准",
+          "high": "高档",
+          "low": "低档"
+        }
+      },
+      "water_level": {
+        "name": "水量",
+        "state": {
+          "off": "关闭",
+          "low": "低",
+          "normal": "标准",
+          "high": "高"
+        }
+      },
+      "speak_level": {
+        "name": "音量",
+        "state": {
+          "none": "静音",
+          "off": "关闭",
+          "low": "低",
+          "normal": "标准",
+          "high": "高"
+        }
+      },
+      "move_direction": {
+        "name": "移动方向",
+        "state": {
+          "none": "无",
+          "forward": "前进",
+          "back": "后退",
+          "left": "左转",
+          "right": "右转"
+        }
+      },
+      "work_status_control": {
+        "name": "工作状态",
+        "state": {
+          "charge": "回充",
+          "work": "工作",
+          "stop": "停止",
+          "pause": "暂停"
+        }
+      },
+      "work_mode": {
+        "name": "工作模式"
+      },
+      "fire_power": {
+        "name": "火力",
+        "state": {
+          "fire_power_0": "0 档",
+          "fire_power_1": "1 档",
+          "fire_power_2": "2 档",
+          "fire_power_3": "3 档",
+          "fire_power_4": "4 档",
+          "fire_power_5": "5 档",
+          "fire_power_6": "6 档",
+          "fire_power_7": "7 档",
+          "fire_power_8": "8 档",
+          "fire_power_9": "9 档",
+          "fire_power_10": "10 档"
+        }
+      },
+      "temperature": {
+        "name": "目标温度"
       }
     },
     "time": {
@@ -849,7 +1012,7 @@
         "name": "当前步数"
       },
       "temperature": {
-        "name": "目标温度"
+        "name": "温度"
       },
       "temperature_above": {
         "name": "上管温度"
@@ -1577,6 +1740,159 @@
       },
       "zone2_temp_set": {
         "name": "温度 - 二区设定值"
+      },
+      "current_humidity": {
+        "name": "当前湿度"
+      },
+      "ambient_temperature": {
+        "name": "温度"
+      },
+      "temperature_raw": {
+        "name": "原始温度"
+      },
+      "humidity_raw": {
+        "name": "原始湿度"
+      },
+      "temperature_compensate": {
+        "name": "补偿温度"
+      },
+      "humidity_compensate": {
+        "name": "补偿湿度"
+      },
+      "co2": {
+        "name": "二氧化碳"
+      },
+      "pm25": {
+        "name": "PM2.5"
+      },
+      "screen_extinction_timeout": {
+        "name": "屏幕熄屏超时"
+      },
+      "work_status": {
+        "name": "工作状态",
+        "state": {
+          "none": "无",
+          "charge": "回充中",
+          "work": "清扫中",
+          "stop": "已停止",
+          "charging_on_dock": "座充中",
+          "reserve_task_finished": "预约任务完成",
+          "charge_finish": "充电完成",
+          "charging_with_wire": "拖线充电中",
+          "pause": "已暂停",
+          "updating": "升级中",
+          "saving_map": "保存地图中",
+          "error": "故障",
+          "sleep": "休眠",
+          "charge_pause": "充电暂停",
+          "relocate": "重新定位",
+          "electrolysed_water_making": "电解水制备中",
+          "dust_collecting": "集尘中",
+          "back_dust_collecting": "返回集尘",
+          "sleep_in_station": "基站休眠"
+        }
+      },
+      "function_type": {
+        "name": "功能类型",
+        "state": {
+          "none": "无",
+          "dust_box_cleaning": "尘盒清洁",
+          "water_tank_cleaning": "水箱清洁"
+        }
+      },
+      "control_type": {
+        "name": "控制方式",
+        "state": {
+          "none": "无",
+          "manual": "手动",
+          "auto": "自动"
+        }
+      },
+      "area": {
+        "name": "已清扫面积"
+      },
+      "battery_percent": {
+        "name": "电池电量"
+      },
+      "work_time": {
+        "name": "工作时长"
+      },
+      "mop": {
+        "name": "拖布状态",
+        "state": {
+          "off": "关闭",
+          "on": "开启",
+          "lack_water": "缺水"
+        }
+      },
+      "speed": {
+        "name": "吸力",
+        "state": {
+          "high": "高",
+          "low": "低"
+        }
+      },
+      "error_type": {
+        "name": "故障类型",
+        "state": {
+          "no": "无",
+          "can_fix": "可自行排除",
+          "reboot": "需重启",
+          "warning": "提示"
+        }
+      },
+      "error_desc": {
+        "name": "故障描述",
+        "state": {
+          "no": "无",
+          "fix_dust": "请清理尘盒",
+          "fix_wheel_hang": "驱动轮悬空",
+          "fix_wheel_overload": "驱动轮过载",
+          "fix_side_brush_overload": "边刷过载",
+          "fix_roll_brush_overload": "滚刷过载",
+          "fix_dust_engine": "风机故障",
+          "fix_front_panel": "前面板异常",
+          "fix_radar_mask": "雷达罩异常",
+          "fix_drop_sensor": "防跌落传感器异常",
+          "fix_low_battery": "电量过低",
+          "fix_abnormal_posture": "机身姿态异常",
+          "fix_laser_sensor": "激光传感器异常",
+          "fix_edge_sensor": "沿墙传感器异常",
+          "fix_start_in_forbid_area": "禁区启动",
+          "fix_start_in_strong_magnetic": "强磁场区域启动",
+          "fix_laser_sensor_blocked": "激光传感器被遮挡",
+          "reboot_laser_comm_fail": "雷达通信异常",
+          "reboot_robot_comm_fail": "主机通信异常",
+          "reboot_inner_fail": "内部异常",
+          "warn_location_fail": "定位失败",
+          "warn_low_battery": "电量低",
+          "warn_full_dust": "尘盒已满",
+          "warn_low_water": "水量低"
+        }
+      },
+      "disturb_start_time": {
+        "name": "勿扰开始时间"
+      },
+      "disturb_end_time": {
+        "name": "勿扰结束时间"
+      },
+      "side_brush_rest_time": {
+        "name": "边刷剩余时间"
+      },
+      "side_brush_life_time": {
+        "name": "边刷寿命"
+      },
+      "filter_net_rest_time": {
+        "name": "滤网剩余时间"
+      },
+      "filter_net_life_time": {
+        "name": "滤网寿命"
+      },
+      "roll_brush_rest_time": {
+        "name": "滚刷剩余时间"
+      },
+      "roll_brush_life_time": {
+        "name": "滚刷寿命"
       }
     },
     "switch": {

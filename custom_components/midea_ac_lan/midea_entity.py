@@ -111,9 +111,13 @@ class MideaEntity(Entity):
     @property
     def device_info(self) -> DeviceInfo:
         """Device registry info for the entity."""
+        dev_cfg = MIDEA_DEVICES[self._device.device_type]
+        # Prefer the localized device-type name (name_zh) when present so the
+        # device page shows e.g. "空调 22251759 (32773)" in Chinese UIs.
+        type_name = dev_cfg.get("name_zh") or dev_cfg["name"]
         info: DeviceInfo = {
             "manufacturer": "Midea",
-            "model": f"{MIDEA_DEVICES[self._device.device_type]['name']} "
+            "model": f"{type_name} "
             f"{self._device.model}"
             f" ({self._device.subtype})",
             "identifiers": {(DOMAIN, str(self._device.device_id))},

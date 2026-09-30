@@ -530,6 +530,15 @@
       }
     },
     "select": {
+      "work_mode": {
+        "name": "Work Mode"
+      },
+      "fire_power": {
+        "name": "Fire Power"
+      },
+      "temperature": {
+        "name": "Target Temperature"
+      },
       "heating_mode": {
         "name": "Heating Mode",
         "state": {

@@ -130,6 +130,7 @@ Entity Naming Rule:
 MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     0x13: {
         "name": "Light",
+        "name_zh": "灯",
         "entities": {
             "light": {
                 "type": Platform.LIGHT,
@@ -140,8 +141,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0x26: {
         "name": "Bathroom Master",
+        "name_zh": "浴霸",
         "entities": {
             X26Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -149,6 +152,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             X26Attributes.current_humidity: {
+                "translation_key": "current_humidity",
                 "type": Platform.SENSOR,
                 "name": "Current Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -156,6 +160,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             X26Attributes.current_radar: {
+                "translation_key": "current_radar",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Occupancy Status",
                 "device_class": BinarySensorDeviceClass.MOTION,
@@ -190,8 +195,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0x34: {
         "name": "Sink Dishwasher",
+        "name_zh": "水槽洗碗机",
         "entities": {
             X34Attributes.door: {
+                "translation_key": "door",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Door",
                 "icon": "mdi:box-shadow",
@@ -212,6 +219,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             X34Attributes.humidity: {
+                "translation_key": "humidity",
                 "type": Platform.SENSOR,
                 "name": "Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -239,6 +247,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             X34Attributes.temperature: {
+                "translation_key": "temperature",
                 "type": Platform.SENSOR,
                 "name": "Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -298,6 +307,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0x40: {
         "name": "Integrated Ceiling Fan",
+        "name_zh": "集成吊顶风扇",
         "entities": {
             "fan": {
                 "type": Platform.FAN,
@@ -305,6 +315,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "default": True,
             },
             X40Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -340,6 +351,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xA1: {
         "name": "Dehumidifier",
+        "name_zh": "除湿机",
         "entities": {
             "humidifier": {
                 "type": Platform.HUMIDIFIER,
@@ -396,6 +408,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:cup-water",
             },
             A1Attributes.current_humidity: {
+                "translation_key": "current_humidity",
                 "type": Platform.SENSOR,
                 "name": "Current Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -403,6 +416,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             A1Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -435,6 +449,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xAC: {
         "name": "Air Conditioner",
+        "name_zh": "空调",
         "entities": {
             "climate": {
                 "type": Platform.CLIMATE,
@@ -841,8 +856,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xAD: {
         "name": "Air Detector",
+        "name_zh": "空气检测仪",
         "entities": {
             ADAttributes.temperature: {
+                "translation_key": "ambient_temperature",
                 "type": Platform.SENSOR,
                 "name": "Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -850,6 +867,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.humidity: {
+                "translation_key": "humidity",
                 "type": Platform.SENSOR,
                 "name": "Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -857,6 +875,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.temperature_raw: {
+                "translation_key": "temperature_raw",
                 "type": Platform.SENSOR,
                 "name": "Temperature Raw",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -864,6 +883,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.humidity_raw: {
+                "translation_key": "humidity_raw",
                 "type": Platform.SENSOR,
                 "name": "Humidity Raw",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -871,6 +891,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.temperature_compensate: {
+                "translation_key": "temperature_compensate",
                 "type": Platform.SENSOR,
                 "name": "Temperature Compensate",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -878,6 +899,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.humidity_compensate: {
+                "translation_key": "humidity_compensate",
                 "type": Platform.SENSOR,
                 "name": "Humidity Compensate",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -885,6 +907,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.tvoc: {
+                "translation_key": "tvoc",
                 "type": Platform.SENSOR,
                 "name": "Tvoc",
                 "icon": "mdi:heat-wave",
@@ -893,6 +916,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.co2: {
+                "translation_key": "co2",
                 "type": Platform.SENSOR,
                 "name": "Carbon Dioxide",
                 "device_class": SensorDeviceClass.CO2,
@@ -900,6 +924,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.pm25: {
+                "translation_key": "pm25",
                 "type": Platform.SENSOR,
                 "name": "PM 2.5",
                 "device_class": SensorDeviceClass.PM25,
@@ -907,6 +932,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.hcho: {
+                "translation_key": "hcho",
                 "type": Platform.SENSOR,
                 "name": "Methanal",
                 "icon": "mdi:molecule",
@@ -915,58 +941,69 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.presets_function: {
+                "translation_key": "presets_function",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Presets Function",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.fall_asleep_status: {
+                "translation_key": "fall_asleep_status",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Asleep Status",
                 "icon": "mdi:sleep",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.screen_extinction_timeout: {
+                "translation_key": "screen_extinction_timeout",
                 "type": Platform.SENSOR,
                 "name": "Screen Extinction Timeout",
                 "unit": UnitOfTime.MINUTES,
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             ADAttributes.portable_sense: {
+                "translation_key": "portable_sense",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Portable Sense",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.night_mode: {
+                "translation_key": "night_mode",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Night Mode",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.screen_status: {
+                "translation_key": "screen_status",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Screen Status",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.led_status: {
+                "translation_key": "led_status",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Ambient Lighting Status",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.arofene_link: {
+                "translation_key": "arofene_link",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Methanal Status",
                 "device_class": BinarySensorDeviceClass.PLUG,
             },
             ADAttributes.header_exist: {
+                "translation_key": "header_exist",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Header Status",
                 "device_class": BinarySensorDeviceClass.PLUG,
             },
             ADAttributes.radar_exist: {
+                "translation_key": "radar_exist",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Radar Status",
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             ADAttributes.header_led_status: {
+                "translation_key": "header_led_status",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Breathing Light",
                 "device_class": BinarySensorDeviceClass.RUNNING,
@@ -975,8 +1012,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xB0: {
         "name": "Microwave Oven",
+        "name_zh": "微波炉",
         "entities": {
             B0Attributes.door: {
+                "translation_key": "door",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Door",
                 "icon": "mdi:box-shadow",
@@ -986,6 +1025,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
             # defines on = UNLOCKED, but this attribute is True when the child
             # lock is ENGAGED, so that device class would display it inverted.
             B0Attributes.child_lock: {
+                "translation_key": "child_lock",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Child Lock",
                 "icon": "mdi:lock",
@@ -1012,6 +1052,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             B0Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -1025,11 +1066,13 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:information",
             },
             B0Attributes.mode: {
+                "translation_key": "mode",
                 "type": Platform.SENSOR,
                 "name": "Mode",
                 "icon": "mdi:chef-hat",
             },
             B0Attributes.fire_power: {
+                "translation_key": "fire_power",
                 "type": Platform.SENSOR,
                 "name": "Fire Power",
                 "icon": "mdi:fire",
@@ -1046,8 +1089,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xB1: {
         "name": "Electric Oven",
+        "name_zh": "电烤箱",
         "entities": {
             B1Attributes.door: {
+                "translation_key": "door",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Door",
                 "icon": "mdi:box-shadow",
@@ -1075,6 +1120,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             B1Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -1113,6 +1159,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xB3: {
         "name": "Dish Sterilizer",
+        "name_zh": "消毒柜",
         "entities": {
             B3Attributes.top_compartment_door: {
                 "type": Platform.BINARY_SENSOR,
@@ -1244,8 +1291,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xB4: {
         "name": "Toaster",
+        "name_zh": "面包机",
         "entities": {
             B4Attributes.door: {
+                "translation_key": "door",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Door",
                 "icon": "mdi:box-shadow",
@@ -1273,6 +1322,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             B4Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -1297,6 +1347,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xB6: {
         "name": "Range Hood",
+        "name_zh": "油烟机",
         "entities": {
             "fan": {
                 "type": Platform.FAN,
@@ -1340,29 +1391,35 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xB8: {
         "name": "Robot Vacuum",
+        "name_zh": "扫地机器人",
         "entities": {
             "work_status": {
+                "translation_key": "work_status",
                 "type": Platform.SENSOR,
                 "name": "Work Status",
                 "icon": "mdi:robot-vacuum",
             },
             "function_type": {
+                "translation_key": "function_type",
                 "type": Platform.SENSOR,
                 "name": "Function Type",
                 "icon": "mdi:function",
             },
             "control_type": {
+                "translation_key": "control_type",
                 "type": Platform.SENSOR,
                 "name": "Control Type",
                 "icon": "mdi:remote",
             },
             "area": {
+                "translation_key": "area",
                 "type": Platform.SENSOR,
                 "name": "Cleaned Area",
                 "icon": "mdi:floor-plan",
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             "battery_percent": {
+                "translation_key": "battery_percent",
                 "type": Platform.SENSOR,
                 "name": "Battery",
                 "device_class": SensorDeviceClass.BATTERY,
@@ -1370,6 +1427,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             "work_time": {
+                "translation_key": "work_time",
                 "type": Platform.SENSOR,
                 "name": "Work Time",
                 "icon": "mdi:timer-outline",
@@ -1377,38 +1435,45 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             "mop": {
+                "translation_key": "mop",
                 "type": Platform.SENSOR,
                 "name": "Mop State",
                 "icon": "mdi:water",
             },
             "speed": {
+                "translation_key": "speed",
                 "type": Platform.SENSOR,
                 "name": "Speed",
                 "icon": "mdi:speedometer",
             },
             "error_type": {
+                "translation_key": "error_type",
                 "type": Platform.SENSOR,
                 "name": "Error Type",
                 "icon": "mdi:alert-circle",
             },
             "error_desc": {
+                "translation_key": "error_desc",
                 "type": Platform.SENSOR,
                 "name": "Error Description",
                 "icon": "mdi:alert",
             },
             "disturb_start_time": {
+                "translation_key": "disturb_start_time",
                 "type": Platform.SENSOR,
                 "name": "Do Not Disturb Start Time",
                 "icon": "mdi:weather-night",
                 "required_attribute": "disturb_start_time",
             },
             "disturb_end_time": {
+                "translation_key": "disturb_end_time",
                 "type": Platform.SENSOR,
                 "name": "Do Not Disturb End Time",
                 "icon": "mdi:weather-sunny",
                 "required_attribute": "disturb_end_time",
             },
             "side_brush_rest_time": {
+                "translation_key": "side_brush_rest_time",
                 "type": Platform.SENSOR,
                 "name": "Side Brush Remaining Time",
                 "icon": "mdi:broom",
@@ -1416,6 +1481,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "side_brush_rest_time",
             },
             "side_brush_life_time": {
+                "translation_key": "side_brush_life_time",
                 "type": Platform.SENSOR,
                 "name": "Side Brush Life Time",
                 "icon": "mdi:broom",
@@ -1423,6 +1489,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "side_brush_life_time",
             },
             "filter_net_rest_time": {
+                "translation_key": "filter_net_rest_time",
                 "type": Platform.SENSOR,
                 "name": "Filter Remaining Time",
                 "icon": "mdi:air-filter",
@@ -1430,6 +1497,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "filter_net_rest_time",
             },
             "filter_net_life_time": {
+                "translation_key": "filter_net_life_time",
                 "type": Platform.SENSOR,
                 "name": "Filter Life Time",
                 "icon": "mdi:air-filter",
@@ -1437,6 +1505,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "filter_net_life_time",
             },
             "roll_brush_rest_time": {
+                "translation_key": "roll_brush_rest_time",
                 "type": Platform.SENSOR,
                 "name": "Roll Brush Remaining Time",
                 "icon": "mdi:brush",
@@ -1444,6 +1513,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "roll_brush_rest_time",
             },
             "roll_brush_life_time": {
+                "translation_key": "roll_brush_life_time",
                 "type": Platform.SENSOR,
                 "name": "Roll Brush Life Time",
                 "icon": "mdi:brush",
@@ -1451,84 +1521,99 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "roll_brush_life_time",
             },
             "have_reserve_task": {
+                "translation_key": "have_reserve_task",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Reserve Task",
                 "icon": "mdi:calendar-clock",
             },
             "uv_switch": {
+                "translation_key": "uv_switch",
                 "type": Platform.BINARY_SENSOR,
                 "name": "UV Light",
                 "icon": "mdi:lightbulb-on-outline",
             },
             "wifi_switch": {
+                "translation_key": "wifi_switch",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Wi-Fi Light",
                 "icon": "mdi:wifi",
             },
             "voice_switch": {
+                "translation_key": "voice_switch",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Voice Prompt",
                 "icon": "mdi:volume-high",
             },
             "command_source": {
+                "translation_key": "command_source",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Command Source",
                 "icon": "mdi:flash",
             },
             "device_error": {
+                "translation_key": "device_error",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Device Error",
                 "icon": "mdi:alert-circle",
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             "carpet_switch": {
+                "translation_key": "carpet_switch",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Carpet Detection",
                 "icon": "mdi:rug",
             },
             "board_communication_error": {
+                "translation_key": "board_communication_error",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Board Communication Error",
                 "icon": "mdi:alert-circle",
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             "laser_sensor_shelter": {
+                "translation_key": "laser_sensor_shelter",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Laser Sensor Shelter",
                 "icon": "mdi:alert-circle",
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             "laser_sensor_error": {
+                "translation_key": "laser_sensor_error",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Laser Sensor Error",
                 "icon": "mdi:alert-circle",
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             "disturb_switch": {
+                "translation_key": "disturb_switch",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Do Not Disturb",
                 "icon": "mdi:minus-circle",
                 "required_attribute": "disturb_switch",
             },
             "clean_mode": {
+                "translation_key": "clean_mode",
                 "type": Platform.SELECT,
                 "name": "Clean Mode",
                 "options": "clean_modes",
                 "icon": "mdi:robot-vacuum",
             },
             "fan_level": {
+                "translation_key": "fan_level",
                 "type": Platform.SELECT,
                 "name": "Fan Level",
                 "options": "fan_levels",
                 "icon": "mdi:fan",
             },
             "water_level": {
+                "translation_key": "water_level",
                 "type": Platform.SELECT,
                 "name": "Water Level",
                 "options": "water_levels",
                 "icon": "mdi:water",
             },
             "speak_level": {
+                "translation_key": "speak_level",
                 "type": Platform.SELECT,
                 "name": "Speak Level",
                 "options": "speak_levels",
@@ -1536,12 +1621,14 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "required_attribute": "speak_level",
             },
             "move_direction": {
+                "translation_key": "move_direction",
                 "type": Platform.SELECT,
                 "name": "Move Direction",
                 "options": "move_directions",
                 "icon": "mdi:arrow-decision",
             },
             "work_status_control": {
+                "translation_key": "work_status_control",
                 "type": Platform.SELECT,
                 "name": "Work Status Control",
                 "attribute": "work_status",
@@ -1549,6 +1636,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:robot-vacuum",
             },
             "voice_volume": {
+                "translation_key": "voice_volume",
                 "type": Platform.NUMBER,
                 "name": "Voice Volume",
                 "icon": "mdi:volume-high",
@@ -1561,6 +1649,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xBF: {
         "name": "Microwave Steam Oven",
+        "name_zh": "微蒸烤一体机",
         "entities": {
             # - Switches (controls) -
             BFAttributes.power: {
@@ -1875,6 +1964,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xC1: {
         "name": "Electric Wall-hung Boiler",
+        "name_zh": "电壁挂炉",
         "entities": {
             "climate": {
                 "type": Platform.CLIMATE,
@@ -1941,6 +2031,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             C1Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -2058,6 +2149,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xC2: {
         "name": "Toilet",
+        "name_zh": "智能马桶",
         "entities": {
             C2Attributes.power: {
                 "type": Platform.SWITCH,
@@ -2095,6 +2187,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:toilet",
             },
             C2Attributes.light_status: {
+                "translation_key": "light_status",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Light Status",
                 "icon": "mdi:lightbulb",
@@ -2155,6 +2248,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xC3: {
         "name": "Heat Pump Wi-Fi Controller",
+        "name_zh": "热泵 Wi-Fi 控制器",
         "entities": {
             "climate_zone1": {
                 "type": Platform.CLIMATE,
@@ -3024,6 +3118,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xCA: {
         "name": "Refrigerator",
+        "name_zh": "冰箱",
         "entities": {
             CAAttributes.bar_door: {
                 "type": Platform.BINARY_SENSOR,
@@ -3181,6 +3276,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xCC: {
         "name": "MDV Wi-Fi Controller",
+        "name_zh": "MDV Wi-Fi 控制器",
         "entities": {
             "climate": {
                 "type": Platform.CLIMATE,
@@ -3235,6 +3331,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xCD: {
         "name": "Heat Pump Water Heater",
+        "name_zh": "空气能热水机",
         "entities": {
             "water_heater": {
                 "type": Platform.WATER_HEATER,
@@ -3735,6 +3832,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xCE: {
         "name": "Fresh Air Appliance",
+        "name_zh": "新风机",
         "entities": {
             "fan": {
                 "type": Platform.FAN,
@@ -3756,6 +3854,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             CEAttributes.current_humidity: {
+                "translation_key": "current_humidity",
                 "type": Platform.SENSOR,
                 "name": "Current Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -3763,6 +3862,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             CEAttributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -3770,6 +3870,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             CEAttributes.co2: {
+                "translation_key": "co2",
                 "type": Platform.SENSOR,
                 "name": "Carbon Dioxide",
                 "device_class": SensorDeviceClass.CO2,
@@ -3785,6 +3886,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             CEAttributes.pm25: {
+                "translation_key": "pm25",
                 "type": Platform.SENSOR,
                 "name": "PM 2.5",
                 "device_class": SensorDeviceClass.PM25,
@@ -3836,6 +3938,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xCF: {
         "name": "Heat Pump",
+        "name_zh": "热泵",
         "entities": {
             "climate": {
                 "type": Platform.CLIMATE,
@@ -3855,6 +3958,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:power",
             },
             CFAttributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -3865,6 +3969,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xDA: {
         "name": "Top Load Washer",
+        "name_zh": "波轮洗衣机",
         "entities": {
             DAAttributes.time_remaining: {
                 "type": Platform.SENSOR,
@@ -3974,6 +4079,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xDB: {
         "name": "Front Load Washer",
+        "name_zh": "滚筒洗衣机",
         "entities": {
             DBAttributes.time_remaining: {
                 "type": Platform.SENSOR,
@@ -4095,6 +4201,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xDC: {
         "name": "Clothes Dryer",
+        "name_zh": "干衣机",
         "entities": {
             DCAttributes.time_remaining: {
                 "type": Platform.SENSOR,
@@ -4188,8 +4295,10 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xE1: {
         "name": "Dishwasher",
+        "name_zh": "洗碗机",
         "entities": {
             E1Attributes.door: {
+                "translation_key": "door",
                 "type": Platform.BINARY_SENSOR,
                 "name": "Door",
                 "icon": "mdi:box-shadow",
@@ -4210,6 +4319,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.PROBLEM,
             },
             E1Attributes.humidity: {
+                "translation_key": "humidity",
                 "type": Platform.SENSOR,
                 "name": "Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -4237,6 +4347,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             E1Attributes.temperature: {
+                "translation_key": "temperature",
                 "type": Platform.SENSOR,
                 "name": "Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -4366,6 +4477,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xE2: {
         "name": "Electric Water Heater",
+        "name_zh": "电热水器",
         "entities": {
             "water_heater": {
                 "type": Platform.WATER_HEATER,
@@ -4394,6 +4506,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             E2Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -4466,6 +4579,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xE3: {
         "name": "Gas Water Heater",
+        "name_zh": "燃气热水器",
         "entities": {
             "water_heater": {
                 "type": Platform.WATER_HEATER,
@@ -4487,6 +4601,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "device_class": BinarySensorDeviceClass.RUNNING,
             },
             E3Attributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -4521,6 +4636,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xE6: {
         "name": "Gas Boilers",
+        "name_zh": "燃气壁挂炉",
         "entities": {
             "water_heater_heating": {
                 "type": Platform.WATER_HEATER,
@@ -4603,6 +4719,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xE8: {
         "name": "Electric Slow Cooker",
+        "name_zh": "电炖锅",
         "entities": {
             E8Attributes.finished: {
                 "type": Platform.BINARY_SENSOR,
@@ -4666,6 +4783,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xEA: {
         "name": "Electric Rice Cooker",
+        "name_zh": "电饭煲",
         "entities": {
             EAAttributes.cooking: {
                 "type": Platform.BINARY_SENSOR,
@@ -4729,6 +4847,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xEC: {
         "name": "Electric Pressure Cooker",
+        "name_zh": "电压力锅",
         "entities": {
             ECAttributes.cooking: {
                 "type": Platform.BINARY_SENSOR,
@@ -4792,6 +4911,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xED: {
         "name": "Water Drinking Appliance",
+        "name_zh": "净水器",
         "entities": {
             EDAttributes.child_lock: {
                 "type": Platform.LOCK,
@@ -5452,6 +5572,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xFA: {
         "name": "Fan",
+        "name_zh": "风扇",
         "entities": {
             "fan": {
                 "type": Platform.FAN,
@@ -5586,6 +5707,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xFB: {
         "name": "Electric Heater",
+        "name_zh": "电暖器",
         "entities": {
             "climate": {
                 "type": Platform.CLIMATE,
@@ -5613,6 +5735,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:power",
             },
             FBAttributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
@@ -5623,6 +5746,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xFC: {
         "name": "Air Purifier",
+        "name_zh": "空气净化器",
         "entities": {
             FCAttributes.child_lock: {
                 "type": Platform.LOCK,
@@ -5682,6 +5806,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:television-ambient-light",
             },
             FCAttributes.pm25: {
+                "translation_key": "pm25",
                 "type": Platform.SENSOR,
                 "name": "PM 2.5",
                 "device_class": SensorDeviceClass.PM25,
@@ -5724,6 +5849,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
     },
     0xFD: {
         "name": "Humidifier",
+        "name_zh": "加湿器",
         "entities": {
             Platform.HUMIDIFIER: {
                 "type": Platform.HUMIDIFIER,
@@ -5763,6 +5889,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "icon": "mdi:television-ambient-light",
             },
             FDAttributes.current_humidity: {
+                "translation_key": "current_humidity",
                 "type": Platform.SENSOR,
                 "name": "Current Humidity",
                 "device_class": SensorDeviceClass.HUMIDITY,
@@ -5770,6 +5897,7 @@ MIDEA_DEVICES: dict[int, dict[str, dict[str, Any] | str]] = {
                 "state_class": SensorStateClass.MEASUREMENT,
             },
             FDAttributes.current_temperature: {
+                "translation_key": "current_temperature",
                 "type": Platform.SENSOR,
                 "name": "Current Temperature",
                 "device_class": SensorDeviceClass.TEMPERATURE,
