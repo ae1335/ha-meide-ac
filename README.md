@@ -1,5 +1,15 @@
 # Midea AC LAN
 
+> **About this fork** — This repository is a modified fork of
+> [wuwentao/midea_ac_lan](https://github.com/wuwentao/midea_ac_lan), which
+> continues the original
+> [georgezhao2010/midea_ac_lan](https://github.com/georgezhao2010/midea_ac_lan).
+> All credit for the integration and the protocol work belongs to the
+> upstream authors; this fork only adds Midea Meiju–aligned AC entities,
+> a 7-level airflow swing select and full zh-Hans translations
+> (see [doc/AC_meiju_hans.md](doc/AC_meiju_hans.md)). The MIT license of
+> the upstream project applies unchanged.
+
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
 [![Stable](https://img.shields.io/github/v/release/wuwentao/midea_ac_lan)](https://github.com/wuwentao/midea_ac_lan/releases/latest)
 

@@ -2,6 +2,7 @@
   "domain": "midea_ac_lan",
   "name": "Midea AC LAN",
   "codeowners": [
+    "@georgezhao2010",
     "@wuwentao",
     "@ae1335"
   ],

@@ -1,5 +1,14 @@
 # Midea AC LAN
 
+> **关于本仓库** — 本仓库是
+> [wuwentao/midea_ac_lan](https://github.com/wuwentao/midea_ac_lan) 的修改版 fork，
+> 上游项目延续自原作者
+> [georgezhao2010/midea_ac_lan](https://github.com/georgezhao2010/midea_ac_lan)。
+> 集成本体与协议解析的全部成果归上游作者所有，本项目仅做了美的美居对齐的
+> 空调实体、7 档摆风选择与全量简体中文翻译
+> （见 [doc/AC_meiju_hans.md](doc/AC_meiju_hans.md)）。上游项目的
+> MIT 许可证原样适用。
+
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/hacs/integration)
 [![Stable](https://img.shields.io/github/v/release/wuwentao/midea_ac_lan)](https://github.com/wuwentao/midea_ac_lan/releases/latest)
 
