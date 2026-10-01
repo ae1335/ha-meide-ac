@@ -102,9 +102,13 @@
 1. 修改 `custom_components/midea_ac_lan/manifest.json` 的 `version`
    （必须是无 `v` 前缀的 semver，如 `2026.9.5-meiju.1`）
 2. 提交并推送，然后打同名 tag（`v2026.9.5-meiju.1`）并推送 tag
-3. 在 GitHub 上基于该 tag 创建 Release —— 仓库 Actions 已启用，
-   上游的 `release.yml` 会自动构建 `midea_ac_lan.zip` 并附加到 Release
-   （若手动上传了同名附件会因冲突失败，无需重复手动构建）
+3. 在 GitHub 上基于该 tag 创建 Release —— 仓库 Actions 会自动构建
+   `midea_ac_lan.zip` 并附加到 Release，无需手动构建
+
+> 已修复的上游限制：上游 `release.yml` 上传附件使用 `secrets.GH_TOKEN`
+> （上游组织的 PAT），fork 上不存在该 secret 会导致发布失败。本仓库
+> 已改为工作流自带的 `GITHUB_TOKEN`（工作流已声明
+> `permissions: contents: write`），fork 无需配置任何 secret 即可发布。
 
 **同步上游更新**
 
