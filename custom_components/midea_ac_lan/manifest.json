@@ -7,7 +7,10 @@
     "@ae1335"
   ],
   "config_flow": true,
-  "dependencies": [],
+  "dependencies": [
+    "frontend",
+    "http"
+  ],
   "documentation": "https://github.com/ae1335/ha-meide-ac#readme",
   "integration_type": "device",
   "iot_class": "local_push",
@@ -18,5 +21,5 @@
   "requirements": [
     "midea-lan==2026.9.2"
   ],
-  "version": "2026.9.4-meiju.1"
+  "version": "2026.9.5-meiju.1"
 }

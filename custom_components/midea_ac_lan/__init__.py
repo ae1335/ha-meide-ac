@@ -10,6 +10,7 @@ integration load process:
 """
 
 import logging
+from pathlib import Path
 from typing import Any, cast
 
 import homeassistant.helpers.config_validation as cv
@@ -221,7 +222,52 @@ async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:  # ruff:
         ),
     )
 
+    await _async_register_card_frontend(hass)
+
     return True
+
+
+FRONTEND_REGISTERED = "card_frontend_registered"
+
+
+async def _async_register_card_frontend(hass: HomeAssistant) -> None:
+    """Register the bundled Meiju AC card as a frontend resource.
+
+    The card ships inside the integration (``www/``), so no second HACS
+    plugin is required. Registration is idempotent - multiple config entries
+    share the single static resource.
+
+    """
+    domain_data = hass.data.setdefault(DOMAIN, {})
+    if domain_data.get(FRONTEND_REGISTERED):
+        return
+    card_path = Path(__file__).parent / "www" / "midea-meiju-ac-card.js"
+    if not card_path.is_file():
+        return
+    try:
+        # Imported lazily: StaticPathConfig only exists on HA >= 2024.7, while
+        # this integration supports 2024.4.1+ (see the hasattr fallback below).
+        # pylint: disable=import-outside-toplevel
+        from homeassistant.components.frontend import add_extra_js_url  # ruff:ignore[import-outside-top-level]
+        from homeassistant.components.http import StaticPathConfig  # ruff:ignore[import-outside-top-level]
+    except ImportError:
+        _LOGGER.debug("frontend component unavailable, skipping card registration")
+        return
+    url_path = f"/{DOMAIN}/www"
+    if hasattr(hass.http, "async_register_static_paths"):
+        await hass.http.async_register_static_paths(
+            [StaticPathConfig(url_path, str(card_path.parent), False)],
+        )
+    else:
+        # HA < 2024.7 fallback (deprecated API, still functional)
+        hass.http.register_static_path(  # type: ignore[attr-defined]
+            url_path,
+            str(card_path.parent),
+            cache_headers=False,
+        )
+    add_extra_js_url(hass, f"{url_path}/{card_path.name}")
+    domain_data[FRONTEND_REGISTERED] = True
+    _LOGGER.debug("Registered Meiju AC card at %s/%s", url_path, card_path.name)
 
 
 async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> bool:
