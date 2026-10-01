@@ -1,5 +1,5 @@
 {
-  "name": "Midea AC LAN",
+  "name": "Midea AC LAN (Meiju zh-Hans fork)",
   "homeassistant": "2024.4.1",
   "zip_release": true,
   "filename": "midea_ac_lan.zip"
