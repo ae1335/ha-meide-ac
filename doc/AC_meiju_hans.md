@@ -7,22 +7,22 @@
 
 ## 一、功能对照表
 
-| # | 美居功能 | 美居字段 | 协议层属性（midea-lan） | 本集成实体 | 状态 |
-|---|---------|---------|------------------------|-----------|------|
-| 1 | 开关 | `switch.on` | `power` | climate 实体 + 电源开关 | ✅ 完整 |
-| 2 | 模式（自动/制冷/抽湿/制热/送风） | `mode.mode` 1-5 | `mode` | climate `hvac_modes` | ✅ 完整 |
-| 3 | 设定温度 16-30℃，0.5 步进 | `temperature.target` | `target_temperature`（step 0.5） | climate 温度 | ✅ 完整 |
-| 4 | 室内温度 | `temperature.current` | `indoor_temperature` | 室内温度 sensor | ✅ 已默认启用 |
-| 5 | ECO 开关（酷省电） | `ECOswitch.on` | `eco_mode` | 酷省电（ECO）switch + climate eco 预设 | ✅ 已默认启用 |
-| 6 | 电辅热 | `switchPTC.on` | `aux_heating` | 电辅热 switch | ✅ 已默认启用 |
-| 7 | 防直吹 | `directBlowPreventionSwitch` | `indirect_wind`（0x0042） | 防直吹 switch | ✅ 已默认启用 |
-| 8 | 智控温 | `smartTempSwitch` | `comfort_mode` | 智控温 switch + climate comfort 预设 | ✅ 已默认启用 |
-| 9 | 上下风 7 档 | `fan.verticalDirection` 0-6 | `swing_vertical` + `wind_ud_angle` | **上下风 select（7 档，见下）** | ✅ 本分支补全 |
-| 10 | 左右风 7 档 | `fan.horizontalDirection` 0-6 | `swing_horizontal` + `wind_lr_angle` | **左右风 select（7 档，见下）** | ✅ 本分支补全 |
-| 11 | 无级风速 1-100% | `fan.speed` | `fan_speed` | 设定风速 number（1-100）+ climate 风速档 | ✅ 已默认启用 |
-| 12 | 自动风 | `automaticAirswitch` | `fan_speed=102`（auto） | climate 风速"自动"档 | ✅ 语义等价（见注 1） |
-| 13 | 故障检测 | `fault.code/status/message` | `error_code`（0x003F） | 故障码 sensor | ✅ 已默认启用 |
-| 14 | 网络信息 / OTA 升级 | `netInfo` / `update` | —（云端专属） | — | ❌ 不适用（见注 2） |
+| #   | 美居功能                         | 美居字段                      | 协议层属性（midea-lan）              | 本集成实体                               | 状态                  |
+| --- | -------------------------------- | ----------------------------- | ------------------------------------ | ---------------------------------------- | --------------------- |
+| 1   | 开关                             | `switch.on`                   | `power`                              | climate 实体 + 电源开关                  | ✅ 完整               |
+| 2   | 模式（自动/制冷/抽湿/制热/送风） | `mode.mode` 1-5               | `mode`                               | climate `hvac_modes`                     | ✅ 完整               |
+| 3   | 设定温度 16-30℃，0.5 步进        | `temperature.target`          | `target_temperature`（step 0.5）     | climate 温度                             | ✅ 完整               |
+| 4   | 室内温度                         | `temperature.current`         | `indoor_temperature`                 | 室内温度 sensor                          | ✅ 已默认启用         |
+| 5   | ECO 开关（酷省电）               | `ECOswitch.on`                | `eco_mode`                           | 酷省电（ECO）switch + climate eco 预设   | ✅ 已默认启用         |
+| 6   | 电辅热                           | `switchPTC.on`                | `aux_heating`                        | 电辅热 switch                            | ✅ 已默认启用         |
+| 7   | 防直吹                           | `directBlowPreventionSwitch`  | `indirect_wind`（0x0042）            | 防直吹 switch                            | ✅ 已默认启用         |
+| 8   | 智控温                           | `smartTempSwitch`             | `comfort_mode`                       | 智控温 switch + climate comfort 预设     | ✅ 已默认启用         |
+| 9   | 上下风 7 档                      | `fan.verticalDirection` 0-6   | `swing_vertical` + `wind_ud_angle`   | **上下风 select（7 档，见下）**          | ✅ 本分支补全         |
+| 10  | 左右风 7 档                      | `fan.horizontalDirection` 0-6 | `swing_horizontal` + `wind_lr_angle` | **左右风 select（7 档，见下）**          | ✅ 本分支补全         |
+| 11  | 无级风速 1-100%                  | `fan.speed`                   | `fan_speed`                          | 设定风速 number（1-100）+ climate 风速档 | ✅ 已默认启用         |
+| 12  | 自动风                           | `automaticAirswitch`          | `fan_speed=102`（auto）              | climate 风速"自动"档                     | ✅ 语义等价（见注 1） |
+| 13  | 故障检测                         | `fault.code/status/message`   | `error_code`（0x003F）               | 故障码 sensor                            | ✅ 已默认启用         |
+| 14  | 网络信息 / OTA 升级              | `netInfo` / `update`          | —（云端专属）                        | —                                        | ❌ 不适用（见注 2）   |
 
 注 1：美居的"自动风"本质是风速自动档（设备根据温差自动调节风量），
 对应本协议 `fan_speed=102`（auto）。在 climate 实体的风速选项中选择
@@ -38,15 +38,15 @@
 
 **上下风（wind_ud_angle）**
 
-| 美居选项 | 本分支选项 | 协议动作 |
-|---------|-----------|---------|
-| 停止摆风 | 停止摆风 | `wind_ud_angle=0` |
-| 上下摆风 | 上下摆风 | `swing_vertical=True` |
-| 最上 | 最上 | `wind_ud_angle=1` |
-| 偏上 | 偏上 | `wind_ud_angle=25` |
-| 居中 | 居中 | `wind_ud_angle=50` |
-| 偏下 | 偏下 | `wind_ud_angle=75` |
-| 最下 | 最下 | `wind_ud_angle=100` |
+| 美居选项 | 本分支选项 | 协议动作              |
+| -------- | ---------- | --------------------- |
+| 停止摆风 | 停止摆风   | `wind_ud_angle=0`     |
+| 上下摆风 | 上下摆风   | `swing_vertical=True` |
+| 最上     | 最上       | `wind_ud_angle=1`     |
+| 偏上     | 偏上       | `wind_ud_angle=25`    |
+| 居中     | 居中       | `wind_ud_angle=50`    |
+| 偏下     | 偏下       | `wind_ud_angle=75`    |
+| 最下     | 最下       | `wind_ud_angle=100`   |
 
 **左右风（wind_lr_angle）** 同理：停止摆风 / 左右摆风 / 最左 / 偏左 /
 居中 / 偏右 / 最右。
