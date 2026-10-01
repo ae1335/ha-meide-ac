@@ -282,6 +282,10 @@ async def async_setup_entry(hass: HomeAssistant, config_entry: ConfigEntry) -> b
     True if entry is configured.
 
     """
+    # Defensive second call: async_setup normally runs once when the
+    # integration is first loaded, but registering again here (idempotent)
+    # guarantees the card is available as soon as any device is configured.
+    await _async_register_card_frontend(hass)
     device_type = config_entry.data.get(CONF_TYPE)
     if device_type == CONF_ACCOUNT:
         return True
