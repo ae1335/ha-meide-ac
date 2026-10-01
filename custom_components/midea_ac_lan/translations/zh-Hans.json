@@ -17,6 +17,13 @@
         "description": "选择添加设备的方式",
         "title": "添加新设备"
       },
+      "cache": {
+        "data": {
+          "action": "操作"
+        },
+        "description": "清除已缓存的账号登录数据，之后需要重新输入账号密码。",
+        "title": "清除缓存登录信息"
+      },
       "login": {
         "data": {
           "account": "账号",

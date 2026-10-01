@@ -10,6 +10,13 @@
       "invalid_token": "Token or Key in an incorrect format"
     },
     "step": {
+      "cache": {
+        "data": {
+          "action": "Action"
+        },
+        "description": "Clear the cached account login data; you will need to enter the account and password again.",
+        "title": "Clear cached login data"
+      },
       "user": {
         "data": {
           "way": "Adding appliances"

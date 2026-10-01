@@ -91,7 +91,39 @@
 2. 仓库地址 `https://github.com/ae1335/ha-meide-ac`，类别"集成"
 3. 安装后重启 Home Assistant
 
-## 七、限制说明
+> 本仓库 `hacs.json` 使用 `zip_release: true`，HACS 会下载 Release 附件
+> `midea_ac_lan.zip`。发布记录见
+> [Releases](https://github.com/ae1335/ha-meide-ac/releases)。
+
+## 七、维护者备忘（发版与上游同步）
+
+**发布新版本**
+
+1. 修改 `custom_components/midea_ac_lan/manifest.json` 的 `version`
+   （必须是无 `v` 前缀的 semver，如 `2026.9.5-meiju.1`）
+2. 提交并推送，然后打同名 tag（`v2026.9.5-meiju.1`）并推送 tag
+3. 在 GitHub 上基于该 tag 创建 Release —— 仓库 Actions 已启用，
+   上游的 `release.yml` 会自动构建 `midea_ac_lan.zip` 并附加到 Release
+   （若手动上传了同名附件会因冲突失败，无需重复手动构建）
+
+**同步上游更新**
+
+```bash
+git fetch upstream
+git rebase upstream/main meiju-a3qf
+git push meiju meiju-a3qf --force-with-lease
+```
+
+`upstream` 指向 `https://github.com/wuwentao/midea_ac_lan`（保留为同步源）。
+
+**回归检查工具**（仓库外，工作目录）
+
+- `check_translation_chain.py` —— 模拟 HA 翻译回退链，量化中文覆盖率
+- `audit_i18n.py` —— 跨语言 key 一致性 + state 翻译与协议枚举比对
+- `verify_swing_select.py` —— 摆风 7 档逻辑回归
+- `scan_zh_leftovers.py` —— 扫描 zh-Hans 全文件的英文残留
+
+## 八、限制说明
 
 - `swing_attribute` 的开关走旧协议 StateSet 全量帧；BB 子协议设备
   （少量新风机一体机型）不支持该路径，此时摆风选项将不生效，
