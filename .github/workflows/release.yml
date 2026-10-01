@@ -113,4 +113,8 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: artifacts/midea_ac_lan.zip
-          token: ${{ secrets.GH_TOKEN }}
+          # Use the workflow-scoped GITHUB_TOKEN (declared with
+          # "permissions: contents: write" above) instead of an
+          # organization PAT, so forks can publish releases without
+          # configuring a GH_TOKEN secret.
+          token: ${{ secrets.GITHUB_TOKEN }}
