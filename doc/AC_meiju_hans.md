@@ -124,8 +124,12 @@ git push meiju meiju-a3qf --force-with-lease
 
 - `check_translation_chain.py` —— 模拟 HA 翻译回退链，量化中文覆盖率
 - `audit_i18n.py` —— 跨语言 key 一致性 + state 翻译与协议枚举比对
-- `verify_swing_select.py` —— 摆风 7 档逻辑回归
 - `scan_zh_leftovers.py` —— 扫描 zh-Hans 全文件的英文残留
+- `verify_swing_select.py` / `verify_swing_extended.py` —— 摆风 7 档逻辑（含
+  全选项扫描、幂等、边界、无 swing 配置场景）
+- `audit_upgrade_compat.py` —— 升级兼容性：对比上游基线的实体表，确认
+  无实体删除、无 platform（entity_id 域名）变更
+- `audit_meiju_coverage.py` —— 美居 A3QF 特性与实体的机器化对照
 
 ## 八、限制说明
 
