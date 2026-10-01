@@ -63,6 +63,78 @@
   },
   "entity": {
     "binary_sensor": {
+      "current_radar": {
+        "name": "Occupancy Status"
+      },
+      "presets_function": {
+        "name": "Presets Function"
+      },
+      "fall_asleep_status": {
+        "name": "Asleep Status"
+      },
+      "portable_sense": {
+        "name": "Portable Sense"
+      },
+      "night_mode": {
+        "name": "Night Mode"
+      },
+      "screen_status": {
+        "name": "Screen Status"
+      },
+      "led_status": {
+        "name": "Ambient Lighting Status"
+      },
+      "arofene_link": {
+        "name": "Methanal Status"
+      },
+      "header_exist": {
+        "name": "Header Status"
+      },
+      "radar_exist": {
+        "name": "Radar Status"
+      },
+      "header_led_status": {
+        "name": "Breathing Light"
+      },
+      "child_lock": {
+        "name": "Child Lock"
+      },
+      "have_reserve_task": {
+        "name": "Reserve Task"
+      },
+      "uv_switch": {
+        "name": "UV Light"
+      },
+      "wifi_switch": {
+        "name": "Wi-Fi Light"
+      },
+      "voice_switch": {
+        "name": "Voice Prompt"
+      },
+      "command_source": {
+        "name": "Command Source"
+      },
+      "device_error": {
+        "name": "Device Error"
+      },
+      "carpet_switch": {
+        "name": "Carpet Detection"
+      },
+      "board_communication_error": {
+        "name": "Board Communication Error"
+      },
+      "laser_sensor_shelter": {
+        "name": "Laser Sensor Shelter"
+      },
+      "laser_sensor_error": {
+        "name": "Laser Sensor Error"
+      },
+      "disturb_switch": {
+        "name": "Do Not Disturb"
+      },
+      "light_status": {
+        "name": "Light Status"
+      },
       "warm_power": {
         "name": "Warm Power"
       },
@@ -489,6 +561,9 @@
       }
     },
     "number": {
+      "voice_volume": {
+        "name": "Voice Volume"
+      },
       "heating_target_temperature": {
         "name": "Heating Target Temperature"
       },
@@ -530,6 +605,24 @@
       }
     },
     "select": {
+      "clean_mode": {
+        "name": "Clean Mode"
+      },
+      "fan_level": {
+        "name": "Fan Level"
+      },
+      "water_level": {
+        "name": "Water Level"
+      },
+      "speak_level": {
+        "name": "Speak Level"
+      },
+      "move_direction": {
+        "name": "Move Direction"
+      },
+      "work_status_control": {
+        "name": "Work Status Control"
+      },
       "work_mode": {
         "name": "Work Mode"
       },
@@ -669,6 +762,87 @@
       }
     },
     "sensor": {
+      "current_humidity": {
+        "name": "Current Humidity"
+      },
+      "ambient_temperature": {
+        "name": "Temperature"
+      },
+      "temperature_raw": {
+        "name": "Temperature Raw"
+      },
+      "humidity_raw": {
+        "name": "Humidity Raw"
+      },
+      "temperature_compensate": {
+        "name": "Temperature Compensate"
+      },
+      "humidity_compensate": {
+        "name": "Humidity Compensate"
+      },
+      "co2": {
+        "name": "Carbon Dioxide"
+      },
+      "pm25": {
+        "name": "PM 2.5"
+      },
+      "screen_extinction_timeout": {
+        "name": "Screen Extinction Timeout"
+      },
+      "work_status": {
+        "name": "Work Status"
+      },
+      "function_type": {
+        "name": "Function Type"
+      },
+      "control_type": {
+        "name": "Control Type"
+      },
+      "area": {
+        "name": "Cleaned Area"
+      },
+      "battery_percent": {
+        "name": "Battery"
+      },
+      "work_time": {
+        "name": "Work Time"
+      },
+      "mop": {
+        "name": "Mop State"
+      },
+      "speed": {
+        "name": "Speed"
+      },
+      "error_type": {
+        "name": "Error Type"
+      },
+      "error_desc": {
+        "name": "Error Description"
+      },
+      "disturb_start_time": {
+        "name": "Do Not Disturb Start Time"
+      },
+      "disturb_end_time": {
+        "name": "Do Not Disturb End Time"
+      },
+      "side_brush_rest_time": {
+        "name": "Side Brush Remaining Time"
+      },
+      "side_brush_life_time": {
+        "name": "Side Brush Life Time"
+      },
+      "filter_net_rest_time": {
+        "name": "Filter Remaining Time"
+      },
+      "filter_net_life_time": {
+        "name": "Filter Life Time"
+      },
+      "roll_brush_rest_time": {
+        "name": "Roll Brush Remaining Time"
+      },
+      "roll_brush_life_time": {
+        "name": "Roll Brush Life Time"
+      },
       "three_way_mode": {
         "name": "Three-way Mode"
       },

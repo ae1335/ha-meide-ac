@@ -112,14 +112,17 @@ class MideaEntity(Entity):
     def device_info(self) -> DeviceInfo:
         """Device registry info for the entity."""
         dev_cfg = MIDEA_DEVICES[self._device.device_type]
-        # Prefer the localized device-type name (name_zh) when present so the
-        # device page shows e.g. "空调 22251759 (32773)" in Chinese UIs.
-        type_name = dev_cfg.get("name_zh") or dev_cfg["name"]
+        # Prefer the localized device-type name (name_zh) for Chinese users so
+        # the device page shows e.g. "空调 22251759 (32773)"; other languages
+        # keep the english type name. self.hass may be None while the entity is
+        # still being constructed, in which case the english name is used.
+        name_zh = dev_cfg.get("name_zh")
+        language = self.hass.config.language if self.hass else ""
+        use_zh = bool(name_zh) and language.startswith("zh")
+        type_name = name_zh if use_zh else dev_cfg["name"]
         info: DeviceInfo = {
             "manufacturer": "Midea",
-            "model": f"{type_name} "
-            f"{self._device.model}"
-            f" ({self._device.subtype})",
+            "model": f"{type_name} {self._device.model} ({self._device.subtype})",
             "identifiers": {(DOMAIN, str(self._device.device_id))},
             "name": self._device_name,
         }
