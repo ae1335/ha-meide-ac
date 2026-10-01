@@ -433,16 +433,14 @@ export class MideaMeijuAcCard extends HTMLElement {
       }),
     );
 
-    this._wrap
-      .querySelectorAll("[data-mode]")
-      .forEach((btn) =>
-        btn.addEventListener("click", () =>
-          this._call("climate", "set_hvac_mode", {
-            entity_id: s,
-            hvac_mode: btn.dataset.mode,
-          }),
-        ),
-      );
+    this._wrap.querySelectorAll("[data-mode]").forEach((btn) =>
+      btn.addEventListener("click", () =>
+        this._call("climate", "set_hvac_mode", {
+          entity_id: s,
+          hvac_mode: btn.dataset.mode,
+        }),
+      ),
+    );
 
     const slider = this._wrap.querySelector("[data-fan]");
     if (slider) {

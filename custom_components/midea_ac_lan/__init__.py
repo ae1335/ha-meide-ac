@@ -248,8 +248,12 @@ async def _async_register_card_frontend(hass: HomeAssistant) -> None:
         # Imported lazily: StaticPathConfig only exists on HA >= 2024.7, while
         # this integration supports 2024.4.1+ (see the hasattr fallback below).
         # pylint: disable=import-outside-toplevel
-        from homeassistant.components.frontend import add_extra_js_url  # ruff:ignore[import-outside-top-level]
-        from homeassistant.components.http import StaticPathConfig  # ruff:ignore[import-outside-top-level]
+        from homeassistant.components.frontend import (  # ruff: ignore[import-outside-top-level]
+            add_extra_js_url,
+        )
+        from homeassistant.components.http import (  # ruff: ignore[import-outside-top-level]
+            StaticPathConfig,
+        )
     except ImportError:
         _LOGGER.debug("frontend component unavailable, skipping card registration")
         return
