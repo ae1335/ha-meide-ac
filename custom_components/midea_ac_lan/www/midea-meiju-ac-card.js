@@ -19,7 +19,7 @@
  * integration builds as "<platform>.<device_id>_<entity_key>".
  */
 
-const CARD_VERSION = "2026.9.5-meiju.1";
+const CARD_VERSION = "2026.9.5-meiju.2";
 
 const MODE_LABELS = {
   auto: "自动",
