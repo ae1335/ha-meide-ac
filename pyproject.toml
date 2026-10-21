@@ -25,7 +25,7 @@ dev = [
   "ruff==0.16.8",
   "mypy==2.3.1",
   "pylint==4.0.9",
-  "pre-commit==4.6.2",
+  "pre-commit==4.7.0",
   # pydantic is required by dev/CI: mypy loads it as a plugin (mypy.ini ->
   # `plugins = pydantic.mypy`), so it must stay installed for `scripts/mypy.sh`.
   "pydantic==2.13.5",
